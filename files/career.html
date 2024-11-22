@@ -1,0 +1,454 @@
+<div ng-controller="careerController as careerCtrl" style="font-family: 'Poppins', sans-serif;background-color: #0a0a0a; min-height: 100vh;">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top mb-5 " style="background: #111111,;
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+    margin: 0; 
+    width: 100%; 
+    padding: 20px 40px;
+    transition: all 0.3s ease;">
+        <div class="container-fluid" style="max-width: 1600px; margin: 0 auto;">
+            <a class="navbar-brand d-flex align-items-center" href="#" style="font-family: 'Archivo Black', sans-serif; 
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 12px;
+                margin-right: 40px;">
+                <img src="eduLogo.png" alt="EDUEASE Logo" style="height: 60px; width: 200px;margin-left: -30px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                style="border: none; 
+                padding: 8px 12px; 
+                border-radius: 10px;
+                transition: all 0.3s ease;
+                background-color: rgba(185, 131, 255, 0.1);
+                color: #ffffff;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="gap: 10px;">
+                    <li class="nav-item">
+                        <a class="nav-link px-4" ui-sref="landing" style="color: #ffffff; 
+                            font-weight: 500; 
+                            font-size: 16px;
+                            padding: 12px 20px;
+                            border-radius: 10px;
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;">
+                            Home
+                            <span style="position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                width: 0;
+                                height: 3px;
+                                background-color: #B983FF;
+                                transition: all 0.3s ease;
+                                transform: translateX(-50%);"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" ui-sref="pdf" style="color: #ffffff; 
+                            font-weight: 500; 
+                            font-size: 16px;
+                            padding: 12px 20px;
+                            border-radius: 10px;
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;">
+                            Chat with PDF
+                            <span style="position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                width: 0;
+                                height: 3px;
+                                background-color: #B983FF;
+                                transition: all 0.3s ease;
+                                transform: translateX(-50%);"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" ui-sref="flash" style="color: #ffffff; 
+                            font-weight: 500; 
+                            font-size: 16px;
+                            padding: 12px 20px;
+                            border-radius: 10px;
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;">
+                            Flashcards
+                            <span style="position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                width: 0;
+                                height: 3px;
+                                background-color: #B983FF;
+                                transition: all 0.3s ease;
+                                transform: translateX(-50%);"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" ui-sref="career" style="color: #ffffff; 
+                            font-weight: 500; 
+                            font-size: 16px;
+                            padding: 12px 20px;
+                            border-radius: 10px;
+                            transition: all 0.3s ease;
+                            position: relative;
+                            overflow: hidden;">
+                            Career Paths
+                            <span style="position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                width: 0;
+                                height: 3px;
+                                background-color: #B983FF;
+                                transition: all 0.3s ease;
+                                transform: translateX(-50%);"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-3">
+                    <!-- <button class="btn" style="background-color: #B983FF; 
+                        color: white; 
+                        border-radius: 12px; 
+                        padding: 12px 28px;
+                        font-weight: 500;
+                        letter-spacing: 0.5px;
+                        border: none;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 15px rgba(185, 131, 255, 0.2);">
+                        Sign Up
+                    </button> -->
+                    <a ui-sref="login">
+                        <button class="btn" style="border: 2px solid #B983FF; 
+                        color: #ffffff; 
+                        border-radius: 12px; 
+                        padding: 12px 28px;
+                        font-weight: 500;
+                        letter-spacing: 0.5px;
+                        transition: all 0.3s ease;
+                        background: transparent;">
+                        Login
+                    </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav><br><br>
+
+    <div class="container pt-5 my-5">
+        <h1 class="text-center mb-5 fw-bold" style="color: white; font-size: 50px; font-weight: bold;">Career Paths</h1>
+        <div class="accordion" id="careerPathAccordion">
+            <div class="accordion-item" style="background-color: #673AB7; color: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                <h2 class="accordion-header" id="headingEngineering">
+                    <button class="accordion-button" style="background-color: #673AB7; color: #fff; font-size: 20px; font-weight: 600;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEngineering" aria-expanded="true" aria-controls="collapseEngineering">
+                        <i class="bi bi-collection-fill me-2"></i> Engineering
+                    </button>
+                </h2>
+                <div id="collapseEngineering" class="accordion-collapse collapse show" aria-labelledby="headingEngineering" data-bs-parent="#careerPathAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Mechanical Engineering</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.3ds.com/store/cad/mechanical-design" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Design
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.school-mechademic.com/blog/product-development" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Development
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.vectorsolutions.com/resources/blogs/what-is-mechanical-maintenance/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Maintenance
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Electrical Engineering</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://en.wikipedia.org/wiki/Electrical_engineering" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Circuits
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://en.wikipedia.org/wiki/Power_engineering" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Power Systems
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://aits-tpt.edu.in/blog/scope-for-electrical-engineers-in-industrial-automation/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Automation
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion-item" style="background-color: #673AB7; color: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                <h2 class="accordion-header" id="headingCivil">
+                    <button class="accordion-button collapsed" style="background-color: #673AB7; color: #fff; font-size: 20px; font-weight: 600;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCivil" aria-expanded="false" aria-controls="collapseCivil">
+                        <i class="bi bi-building-fill me-2"></i> Civil Engineering
+                    </button>
+                </h2>
+                <div id="collapseCivil" class="accordion-collapse collapse" aria-labelledby="headingCivil" data-bs-parent="#careerPathAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Structural Engineering</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.novatr.com/blog/structural-design-in-civil-engineering" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Building Design
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.quora.com/How-do-civil-engineers-design-a-bridge" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Bridge Design
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://en.wikipedia.org/wiki/Earthquake_engineering" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Earthquake Engineering
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Environmental Engineering</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://sathee.prutor.ai/article/geography/environmental-engineering-water-treatment/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Water Treatment
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://engineeringonline.ucr.edu/blog/air-quality-engineer/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Air Pollution Control
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.recycling-magazine.com/2020/09/07/waste-management-in-engineering/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Waste Management
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion-item" style="background-color: #673AB7; color: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                <h2 class="accordion-header" id="headingComputer">
+                    <button class="accordion-button collapsed" style="background-color: #673AB7; color: #fff; font-size: 20px; font-weight: 600;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComputer" aria-expanded="false" aria-controls="collapseComputer">
+                        <i class="bi bi-laptop-fill me-2"></i> Computer Engineering
+                    </button>
+                </h2>
+                <div id="collapseComputer" class="accordion-collapse collapse" aria-labelledby="headingComputer" data-bs-parent="#careerPathAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Hardware Engineering</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://en.wikipedia.org/wiki/Processor_design" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Processor Design
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.sciencedirect.com/topics/computer-science/memory-system" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Memory Systems
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.coursera.org/articles/embedded-systems" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Embedded Systems
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Software Engineering</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.indeed.com/career-advice/career-development/types-of-operating-systems" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Operating Systems
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.computerscience.org/bootcamps/guides/programming-languages-software-engineering/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Programming Languages
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.geeksforgeeks.org/ai-in-software-engineering/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Artificial Intelligence
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="background-color: #673AB7; color: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                <h2 class="accordion-header" id="headinCompute">
+                    <button class="accordion-button collapsed" style="background-color: #673AB7; color: #fff; font-size: 20px; font-weight: 600;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCompute" aria-expanded="false" aria-controls="collapseComputer">
+                        <i class="bi bi-briefcase me-2"></i> Business & Healthcare
+                    </button>
+                </h2>
+                <div id="collapseCompute" class="accordion-collapse collapse" aria-labelledby="headingCompute" data-bs-parent="#careerPathAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Business</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.investopedia.com/terms/a/accounting.asp" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Accounting
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.investopedia.com/terms/f/financialaccounting.asp" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Finance
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.bestaccountingschools.net/faq/what-is-accounting-marketing/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Marketing
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://en.wikipedia.org/wiki/Management_accounting" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Management
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">Healthcare</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.news-medical.net/health/Nursing-Healthcare-Profession.aspx" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Nursing
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://pharmdonline.findlay.edu/blog/role-pharmacists-healthcare-systems" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Pharmacy
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.webmd.com/health-insurance/insurance-doctor-types" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Doctors
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" style="background-color: #673AB7; color: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+                <h2 class="accordion-header" id="headinComput">
+                    <button class="accordion-button collapsed" style="background-color: #673AB7; color: #fff; font-size: 20px; font-weight: 600;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseComput" aria-expanded="false" aria-controls="collapseComput">
+                        <i class="bi bi-card-list me-2"></i> Information Technology
+                    </button>
+                </h2>
+                <div id="collapseComput" class="accordion-collapse collapse" aria-labelledby="headingComput" data-bs-parent="#careerPathAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">IT</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.ibm.com/topics/cybersecurity" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Cybersecurity
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://en.wikipedia.org/wiki/Data_analysis" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Data Analysis
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.techtarget.com/searchdatamanagement/definition/database-administrator" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Database Administrator
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.coursera.org/in/articles/what-does-a-ux-designer-do" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            User experience design
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="mb-3" style="font-size: 18px; font-weight: 600;">IT</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.geeksforgeeks.org/cloud-computing/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Cloud computing
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://in.indeed.com/career-advice/finding-a-job/what-does-network-engineer-do" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Network Engineer
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item" style="background-color: #673AB7; color: #fff; border-radius: 8px; margin-bottom: 8px; transition: all 0.3s ease;">
+                                        <a href="https://www.techrepublic.com/article/data-quality-manager-job-description/" class="text-decoration-none text-white d-flex justify-content-between align-items-center" style="padding: 12px 16px;">
+                                            Data Quality Manager
+                                            <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            
+</div>

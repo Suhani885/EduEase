@@ -1,0 +1,189 @@
+<div ng-controller="LoginController as loginCtrl" style="background-color: #13111C; min-height: 100vh; overflow-x: hidden;">
+  <div class="container min-vh-100 d-flex align-items-center py-5">
+    <div class="row w-100 justify-content-center align-items-center g-5">
+      <!-- Left Column with fade-in and slide animation -->
+      <div class="col-12 col-lg-6" 
+           style="animation: slideInLeft 0.8s ease-out;">
+        <div class="text-center text-lg-start">
+          <h1 class="display-4 fw-bold mb-4" style="color: #ffffff; animation: fadeIn 1s ease-out;">
+            Your Gateway To<br/>
+            <span style="color: #A855F7; display: inline-block; animation: fadeInUp 1.2s ease-out;">Smarter Learning</span>
+          </h1>
+          <p class="lead" style="color: #9CA3AF; animation: fadeIn 1.5s ease-out;">
+            Transform your learning experience with our comprehensive platform. 
+            Access expert-curated content, and a personalized experience that makes studying smarter and more fun. 
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column with fade-in and slide animation -->
+      <div class="col-12 col-lg-6" 
+           style="animation: slideInRight 0.8s ease-out;">
+        <div class="card border-0" 
+             style="background-color: #1F1A2D; box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15); min-height: 600px; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+             onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 40px rgba(168, 85, 247, 0.25)';"
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 32px rgba(168, 85, 247, 0.15)';">
+          <div class="text-center pt-5 pb-4">
+            <!-- Logo with pulse animation -->
+            <img src="eduLogo.png" alt="EDUEASE Logo" 
+                 style="height: auto; width: 270px; max-width: 100%; object-fit: contain; animation: pulse 2s infinite;">
+          </div>
+          <div class="card-body p-4 p-sm-5">
+            <form ng-submit="loginCtrl.login()">
+              <!-- Animated input fields -->
+              <div class="form-floating mb-4" style="animation: fadeInUp 0.6s ease-out;">
+                <input 
+                  type="text" 
+                  class="form-control form-control-lg border-0"
+                  id="emailInput"
+                  placeholder="name@example.com" ng-model="loginCtrl.email"
+                  style="background-color: #2D2640; color: #ffffff; height: 60px; transition: all 0.3s ease;"
+                  onFocus="this.style.transform='translateX(5px)'; this.style.borderColor='#A855F7'; this.style.boxShadow='0 0 0 0.2rem rgba(168, 85, 247, 0.25)'"
+                  onBlur="this.style.transform='translateX(0)'; this.style.borderColor='transparent'; this.style.boxShadow='none'"
+                />
+                <label for="emailInput" class="text-light">Email address</label>
+              </div>
+              <div class="form-floating mb-4 position-relative" style="animation: fadeInUp 0.8s ease-out;">
+                <input 
+                  type="password" 
+                  class="form-control form-control-lg border-0"
+                  id="passwordInput" ng-model="loginCtrl.password"
+                  placeholder="Password"
+                  style="background-color: #2D2640; color: #ffffff; height: 60px; transition: all 0.3s ease;"
+                  onFocus="this.style.transform='translateX(5px)'; this.style.borderColor='#A855F7'; this.style.boxShadow='0 0 0 0.2rem rgba(168, 85, 247, 0.25)'"
+                  onBlur="this.style.transform='translateX(0)'; this.style.borderColor='transparent'; this.style.boxShadow='none'"
+                />
+                <label for="passwordInput" class="text-light">Password</label>
+                <!-- Password Toggle Button -->
+                <button 
+                  type="button"
+                  onclick="togglePassword()"
+                  style="
+                    position: absolute;
+                    right: 16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: none;
+                    border: none;
+                    color: #A855F7;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  onMouseOver="this.style.color='#9333EA'"
+                  onMouseOut="this.style.color='#A855F7'"
+                >
+                  <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+              <!-- Animated button with hover effect -->
+              <button 
+                type="submit" 
+                class="btn btn-lg w-100 mb-4 position-relative overflow-hidden"
+                style="
+                  background: linear-gradient(45deg, #A855F7, #9333EA);
+                  color: #ffffff;
+                  font-weight: 600;
+                  height: 56px;
+                  border: none;
+                  transition: all 0.3s ease;
+                  animation: fadeInUp 1s ease-out;
+                "
+                onMouseOver="this.style.transform='scale(1.02)'; this.style.filter='brightness(110%)'"
+                onMouseOut="this.style.transform='scale(1)'; this.style.filter='brightness(100%)'"
+              >
+                LOGIN
+              </button>
+              <!-- Animated register link -->
+              <p class="text-center text-light mb-0" style="animation: fadeIn 1.2s ease-out;">
+                Don't have an account? 
+                <a href="#" 
+                   class="text-decoration-none"
+                   style="color: #A855F7; transition: all 0.3s ease;"
+                   onMouseOver="this.style.color='#9333EA'; this.style.textDecoration='underline'; this.style.paddingLeft='4px'"
+                   onMouseOut="this.style.color='#A855F7'; this.style.textDecoration='none'; this.style.paddingLeft='0'">
+                  Register
+                </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adding keyframe animations -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+
+  <!--JavaScript for password toggle -->
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('passwordInput');
+      const eyeIcon = document.getElementById('eyeIcon');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.innerHTML = `
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        `;
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.innerHTML = `
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+        `;
+      }
+    }
+  </script>
+</div>
