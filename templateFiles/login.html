@@ -1,0 +1,150 @@
+<div ng-controller="LoginController as loginCtrl" style="font-family: 'Poppins', sans-serif; background: #0a0a0a; min-height: 100vh; overflow-x: hidden;">
+  
+  <!-- Background Particles & Overlay -->
+  <div class="position-absolute w-100 h-100" style="z-index: 0;">
+    <!-- Animated Particles -->
+    <div class="particles-container" style="position: absolute; width: 100%; height: 100%; overflow: hidden;">
+      <div class="particle" style="position: absolute; width: 4px; height: 4px; background: #B983FF; border-radius: 50%; opacity: 0.6; animation: floatParticle 15s infinite linear; top: 20%; left: 10%;"></div>
+      <div class="particle" style="position: absolute; width: 3px; height: 3px; background: #8B5CF6; border-radius: 50%; opacity: 0.4; animation: floatParticle 20s infinite linear; top: 60%; left: 80%; animation-delay: -5s;"></div>
+      <div class="particle" style="position: absolute; width: 5px; height: 5px; background: #B983FF; border-radius: 50%; opacity: 0.5; animation: floatParticle 18s infinite linear; top: 40%; left: 60%; animation-delay: -10s;"></div>
+      <div class="particle" style="position: absolute; width: 2px; height: 2px; background: #8B5CF6; border-radius: 50%; opacity: 0.7; animation: floatParticle 12s infinite linear; top: 80%; left: 20%; animation-delay: -8s;"></div>
+      <div class="particle" style="position: absolute; width: 6px; height: 6px; background: #B983FF; border-radius: 50%; opacity: 0.3; animation: floatParticle 25s infinite linear; top: 30%; left: 90%; animation-delay: -15s;"></div>
+    </div>
+
+    <!-- Grid Overlay -->
+    <div class="position-absolute w-100 h-100" style="background-image: linear-gradient(rgba(185, 131, 255, 0.153) 1px, transparent 1px), linear-gradient(90deg, rgba(185, 131, 255, 0.074) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.6; animation: gridPulse 8s ease-in-out infinite;"></div>
+
+    <div class="position-absolute" style="top: 20%; right: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(185, 131, 255, 0.3) 0%, transparent 70%); border-radius: 50%; filter: blur(40px); animation: pulse 4s ease-in-out infinite;"></div>
+
+    <div class="position-absolute" style="bottom: 20%; left: 5%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%); border-radius: 50%; filter: blur(30px); animation: pulse 6s ease-in-out infinite reverse;"></div>
+  </div>
+
+  <div class="container min-vh-100 d-flex align-items-center py-5">
+    <div class="row w-100 justify-content-center align-items-center g-5">
+
+      <!-- Left Column: Intro -->
+      <div class="col-12 col-lg-6" style="animation: slideInLeft 0.8s ease-out;">
+        <div class="text-center text-lg-start px-2 px-lg-4">
+          <h1 class="display-4 fw-bold mb-4" style="color: #ffffff; animation: fadeIn 1s ease-out;">
+            Your Gateway To<br />
+            <span style="color: #A855F7; display: inline-block; animation: fadeInUp 1.2s ease-out;">Smarter Learning</span>
+          </h1>
+          <p class="lead" style="color: #9CA3AF; animation: fadeIn 1.5s ease-out;">
+            Transform your learning experience with our comprehensive platform. Access expert-curated content, and a personalized experience that makes studying smarter and more fun.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column: Login Card -->
+      <div class="col-12 col-lg-6 px-3 px-lg-5">
+        <div class="card border-0 shadow-lg" style="backdrop-filter: blur(12px); background: rgba(51, 33, 73, 0.4); border-radius: 1.25rem; overflow: hidden;">
+          
+          <div class="text-center pt-5 pb-4">
+            <img src="/assets/eduLogo.png" alt="EDUEASE Logo" style="height: auto; width: 270px; max-width: 100%; object-fit: contain; animation: pulse 2s infinite;">
+          </div>
+
+          <div class="card-body px-4 px-sm-5 pb-5">
+            <form ng-submit="loginCtrl.login()">
+              <div class="form-floating mb-4">
+                <input 
+                  type="text" 
+                  class="form-control form-control-lg border-0"
+                  placeholder="Username" 
+                  ng-model="loginCtrl.uname"
+                  autocomplete="on"
+                  style="background-color: #2D2640; color: #ffffff; height: 60px; transition: all 0.3s ease;"
+                  onFocus="this.style.transform='translateX(5px)'; this.style.borderColor='#A855F7'; this.style.boxShadow='0 0 0 0.2rem rgba(168, 85, 247, 0.25)'"
+                  onBlur="this.style.transform='translateX(0)'; this.style.borderColor='transparent'; this.style.boxShadow='none'"
+                />
+              </div>
+
+              <div class="form-floating mb-4 position-relative">
+                <input 
+                  type="password" 
+                  class="form-control form-control-lg border-0"
+                  id="passwordInput" 
+                  pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,16}"
+                  ng-model="loginCtrl.password"
+                  placeholder="Password"
+                  autocomplete="on"
+                  style="background-color: #2D2640; color: #ffffff; height: 60px; transition: all 0.3s ease;"
+                  onFocus="this.style.transform='translateX(5px)'; this.style.borderColor='#A855F7'; this.style.boxShadow='0 0 0 0.2rem rgba(168, 85, 247, 0.25)'"
+                  onBlur="this.style.transform='translateX(0)'; this.style.borderColor='transparent'; this.style.boxShadow='none'"
+                />
+
+                <!-- Password Toggle -->
+                <button 
+                  type="button"
+                  onclick="togglePassword()"
+                  style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #A855F7; cursor: pointer; transition: all 0.3s ease; padding: 0;"
+                  onMouseOver="this.style.color='#9333EA'"
+                  onMouseOut="this.style.color='#A855F7'"
+                >
+                  <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+
+              <button 
+                type="submit" 
+                class="btn btn-lg w-100 mt-2 mb-5"
+                style="background: linear-gradient(45deg, #A855F7, #9333EA); color: #ffffff; font-weight: 600; height: 56px; border: none; transition: all 0.3s ease; animation: fadeInUp 1s ease-out;"
+                onMouseOver="this.style.transform='scale(1.02)'; this.style.filter='brightness(110%)'"
+                onMouseOut="this.style.transform='scale(1)'; this.style.filter='brightness(100%)'"
+              >
+                LOGIN
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Animations -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('passwordInput');
+      const eyeIcon = document.getElementById('eyeIcon');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.innerHTML = `
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        `;
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.innerHTML = `
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+        `;
+      }
+    }
+  </script>
+</div>

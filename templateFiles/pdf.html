@@ -1,5 +1,4 @@
 <div ng-controller="pdfController as pdfCtrl" style="font-family: 'Poppins', sans-serif;background-color: #0a0a0a; min-height: 100vh;">
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg fixed-top mb-5" style="background: #111111,;
     backdrop-filter: blur(10px); 
     box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
@@ -13,7 +12,7 @@
                 padding: 8px 15px;
                 border-radius: 12px;
                 margin-right: 40px;">
-                <img src="eduLogo.png" alt="EDUEASE Logo" style="height: 60px; width: 200px;margin-left: -30px;">
+                <img src="/assets/eduLogo.png" alt="EDUEASE Logo" style="height: 60px; width: 200px;margin-left: -30px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 style="border: none; 
@@ -108,17 +107,6 @@
                     </li>
                 </ul>
                 <div class="d-flex gap-3">
-                    <!-- <button class="btn" style="background-color: #B983FF; 
-                        color: white; 
-                        border-radius: 12px; 
-                        padding: 12px 28px;
-                        font-weight: 500;
-                        letter-spacing: 0.5px;
-                        border: none;
-                        transition: all 0.3s ease;
-                        box-shadow: 0 4px 15px rgba(185, 131, 255, 0.2);">
-                        Sign Up
-                    </button> -->
                     <a ui-sref="login">
                         <button class="btn" style="border: 2px solid #B983FF; 
                         color: #ffffff; 
@@ -134,206 +122,138 @@
                 </div>
             </div>
         </div>
-    </nav><br><br><br>
-
-    <!-- Hero Section -->
-    <section class="d-flex align-items-center justify-content-center" style="min-height: 100vh; background: linear-gradient(135deg, #111111, #2A0944); position: relative; overflow: hidden;">
-        
-        <div class="container" style="margin-top: 80px;">
-            <div class="text-center mb-5" style="position: relative;">
-                <h1 class="display-1 mb-4 fw-bold" style="
-                        font-size: clamp(48px, 6vw, 80px);
-                        color: #ffffff;
-                        text-shadow: 0 4px 20px rgba(185, 131, 255, 0.3);
-                        opacity: 0;
-                        transform: translateY(30px);
-                        animation: fadeInUp 1s ease forwards 0.5s;">
-                        EDUEASE
-                    </h1>
-                <p style="color: #B983FF; 
-                    font-size: 22px; 
-                    max-width: 800px; 
-                    margin: 0 auto 50px; 
-                    opacity: 0; 
-                    animation: fadeIn 1s ease forwards 0.8s;
-                    line-height: 1.6;">
+    </nav><br><br><br><br><br>
+    
+    <section class="min-vh-100 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #111111, #2A0944);">
+        <div class="container py-4">
+            <!-- Header Section -->
+            <div class="text-center mb-4">
+                <h1 class="display-2 fw-bold text-white mb-3 animate__animated animate__fadeInUp">
+                    EDUEASE
+                </h1>
+                <p class="fs-5 text-center mx-auto mb-4 animate__animated animate__fadeIn" style="max-width: 700px; color: #B983FF;">
                     Chat with your PDFs using our intelligent system. Upload, analyze, and interact with your documents in a whole new way.
                 </p>
-                
-                <!-- Upload Container -->
-                <div class="card mb-5" style="background-color: #1a1625; border: none; border-radius: 15px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); max-width: 600px; margin: 0 auto; position: relative; overflow: hidden;">
-                    <!-- Decorative Background Element -->
-                    <div style="position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(138, 91, 255, 0.1) 0%, rgba(108, 59, 239, 0.1) 100%); border-radius: 50%; filter: blur(40px);"></div>
-                
-                    <div style="width: 100%; padding: 20px;">
-                        <!-- PDF Upload Section -->
-                        <div class="card" style="background-color: #231f33; border: none; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(138, 91, 255, 0.1); transition: transform 0.3s ease;">
-                            <div class="card-body" style="padding: 20px;">
-                                <form ng-submit="pdfCtrl.uploadDocs()" id="form" enctype="multipart/form-data">
-                                    <div style="margin-bottom: 15px;">
-                                        <label for="file" style="color: #b2a8ff; font-size: 0.9rem; margin-bottom: 8px; display: block;">
-                                            <i class="fas fa-file-pdf" style="margin-right: 8px; color: #8a5bff;"></i>Upload PDF
-                                        </label>
-                                        <div style="position: relative; margin-bottom: 15px;">
-                                            <input type="file" class="form-control" id="image" accept=".pdf" 
-                                                   onchange="angular.element(this).scope().pdfCtrl.file(this)" required
-                                                   style="background-color: #2d2640; border: 1px solid #4a4159; color: #e0d9ff; border-radius: 8px; padding: 10px; padding-left: 35px; width: 100%; transition: border-color 0.3s ease;">
-                                                   <input type="file" class="form-control" id="image" accept=".pdf" 
-                                                   onchange="angular.element(this).scope().pdfCtrl.files(this)"
-                                                   style="background-color: #2d2640; border: 1px solid #4a4159; color: #e0d9ff; border-radius: 8px; padding: 10px; padding-left: 35px; width: 100%; transition: border-color 0.3s ease;">       
-                                            <i class="fas fa-upload" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #8a5bff;"></i>
+            </div>
+    
+            <div class="row justify-content-center mt-5">
+                <div class="col-12 col-xl-10">
+                    <div class="card border-0 shadow-lg" style="background-color: #1a1625; border-radius: 16px;">
+                        <div class="row g-0">
+                            <!-- PDF Upload Section -->
+                            <div class="col-md-4 border-end" style="border-color: #2d2640 !important;">
+                                <div class="p-3">
+                                    <div class="text-center mb-5">
+                                        <i class="bi bi-cloud-arrow-up fs-1 mb-2" style="color: #8a5bff;"></i>
+                                        <h3 class="text-white fs-4 mb-1">Upload your PDFs</h3>
+                                        <p class="text-white small">Select files to start chatting</p>
+                                    </div>
+    
+                                    <form ng-submit="pdfCtrl.uploadDocs()" id="form" enctype="multipart/form-data">
+                                        <div class="mb-4">
+                                            <label class="form-label small text-start d-block" style="color: #e0d9ff;">Primary PDF</label>
+                                            <div class="input-group input-group-sm">
+                                                <input type="file" 
+                                                       class="form-control form-control-sm"
+                                                       style="background-color: #2d2640; border-color: #4a4159; color: #e0d9ff; font-size: 0.875rem;"
+                                                       id="primaryPdf"
+                                                       accept=".pdf"
+                                                       onchange="angular.element(this).scope().pdfCtrl.file(this)"
+                                                       required>
+                                            </div>
                                         </div>
-                                        <button type="submit" style="background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%); border: none; color: white; padding: 12px; border-radius: 8px; width: 100%; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                                            <i class="fas fa-cloud-upload-alt"></i>
-                                            <span>Upload</span>
+    
+                                        <div class="mb-4">
+                                            <label class="form-label small text-start d-block" style="color: #e0d9ff;">Additional PDF (Optional)</label>
+                                            <div class="input-group input-group-sm">
+                                                <input type="file"
+                                                       class="form-control form-control-sm"
+                                                       style="background-color: #2d2640; border-color: #4a4159; color: #e0d9ff; font-size: 0.875rem;"
+                                                       id="secondaryPdf"
+                                                       accept=".pdf"
+                                                       onchange="angular.element(this).scope().pdfCtrl.files(this)">
+                                            </div>
+                                        </div>
+    
+                                        <button type="submit" class="btn btn-sm w-100 mb-4 d-flex align-items-center justify-content-center gap-2" 
+                                                style="background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%); color: white; padding: 0.5rem;">
+                                            <i class="bi bi-upload"></i>
+                                            <span class="small">Upload PDFs</span>
                                         </button>
+                                    </form>
+    
+                                    <button ng-click="pdfCtrl.downloadChat()" 
+                                            class="btn btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
+                                            style="background-color: #2d2640; border: 1px solid #4a4159; color: #e0d9ff; padding: 0.5rem;">
+                                        <i class="bi bi-download"></i>
+                                        <span class="small">Download Chat History As PDF</span>
+                                    </button>
+                                </div>
+                            </div>
+    
+                            <!-- Chat Section -->
+                            <div class="col-md-8">
+                                <div class="d-flex flex-column h-100 p-3">
+                                    <!-- Messages Container -->
+                                    <div id="messagesContainer" class="flex-grow-1 mb-3 p-3" 
+                                         style="background-color: #231f33; border-radius: 12px; overflow-y: auto; height: 550px;">
+                                        
+                                        <!-- Empty State -->
+                                        <div class="text-center" ng-if="!pdfCtrl.messages.length">
+                                            <div class="py-4">
+                                                <i class="bi bi-robot fs-1 mb-2" style="color: #8a5bff;"></i>
+                                                <h5 class="text-white fs-6 mb-2">Ready to Chat!</h5>
+                                                <p class="text-muted small">Upload a PDF and start asking questions</p>
+                                            </div>
+                                        </div>
+    
+                                        <!-- Messages -->
+                                        <div ng-repeat="message in pdfCtrl.messages" 
+                                             class="mb-3 animate__animated animate__fadeIn">
+                                            <div ng-if="message.type === 'user'" 
+                                                 class="d-flex justify-content-end align-items-end gap-2">
+                                                <div class="p-2 rounded-3" 
+                                                     style="background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%); color: white; max-width: 80%; border-radius: 12px 12px 0 12px !important;">
+                                                    <p class="mb-0 small">{{message.answer}}</p>
+                                                </div>
+                                                <i class="bi bi-person-circle fs-5" style="color: #8a5bff;"></i>
+                                            </div>
+                                            <div ng-if="message.type === 'assistant'" 
+                                                 class="d-flex justify-content-start align-items-end gap-2">
+                                                <i class="bi bi-robot fs-5" style="color: #8a5bff;"></i>
+                                                <div class="p-2 rounded-3" 
+                                                     style="background-color: #2d2640; color: #e0d9ff; max-width: 80%; border-radius: 12px 12px 12px 0 !important;">
+                                                    <p class="mb-0 small">{{message.answer}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </form>
+    
+                                    <!-- Chat Input -->
+                                    <form ng-submit="pdfCtrl.fetchResponses()" class="mt-auto">
+                                        <div class="input-group">
+                                            <input type="text" 
+                                                   class="form-control form-control-sm"
+                                                   style="background-color: #2d2640; border: 1px solid #4a4159; color: #e0d9ff; font-size: 0.875rem;"
+                                                   required 
+                                                   ng-model="pdfCtrl.question"
+                                                   placeholder="Type your question...">
+                                            <button type="submit" 
+                                                    class="btn btn-sm px-3"
+                                                    style="background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%); color: white;">
+                                                <i class="bi bi-send"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                
-                    <div class="card-body" style="padding: 20px;">
-                        <!-- Messages Container -->
-                        <div id="messagesContainer" class="d-flex flex-column mb-3" 
-                             style="max-height: 400px; overflow-y: auto; padding: 15px; background-color: #231f33; border-radius: 12px; margin-bottom: 20px; scrollbar-width: thin; scrollbar-color: #8a5bff #2d2640;">
-                            <!-- System Message -->
-                            <div class="text-center mb-3" ng-if="!pdfCtrl.messages.length">
-                                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; color: #8a7fb9; animation: fadeIn 0.5s ease;">
-                                    <i class="fas fa-robot" style="font-size: 24px; color: #8a5bff;"></i>
-                                    <small>Upload a PDF to start the conversation</small>
-                                </div>
-                            </div>
-                
-                            <!-- Dynamic Messages -->
-                            <div ng-repeat="message in pdfCtrl.messages" 
-                                 class="message mb-2" 
-                                 style="margin-bottom: 15px; animation: slideIn 0.3s ease;">
-                                <!-- User Message -->
-                                <div ng-if="message.type === 'user'" 
-                                     style="display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
-                                    <div style="background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%); color: white; padding: 12px 16px; border-radius: 15px 15px 0 15px; max-width: 80%; box-shadow: 0 4px 15px rgba(138, 91, 255, 0.2);">
-                                        {{message.answer}}
-                                    </div>
-                                    <i class="fas fa-user-circle" style="color: #8a5bff; font-size: 24px;"></i>
-                                </div>
-                                <!-- Assistant Message -->
-                                <div ng-if="message.type === 'assistant'" 
-                                     style="display: flex; justify-content: flex-start; align-items: center; gap: 8px;">
-                                    <i class="fas fa-robot" style="color: #8a5bff; font-size: 24px;"></i>
-                                    <div style="background-color: #2d2640; color: #e0d9ff; padding: 12px 16px; border-radius: 15px 15px 15px 0; max-width: 80%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
-                                        {{message.answer}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Question Input Form -->
-                        <form ng-submit="pdfCtrl.fetchResponses()" id="form" style="position: relative;">
-                            <div style="margin-bottom: 15px;">
-                                <label for="text" style="color: #b2a8ff; font-size: 0.9rem; margin-bottom: 8px; display: block;">
-                                    <i class="fas fa-question-circle" style="margin-right: 8px; color: #8a5bff;"></i>Ask a Question
-                                </label>
-                                <div style="position: relative;">
-                                    <input type="text" class="form-control" id="text" required ng-model="pdfCtrl.question"
-                                           style="background-color: #2d2640; border: 1px solid #4a4159; color: #e0d9ff; border-radius: 8px; padding: 12px; padding-left: 35px; width: 100%; margin-bottom: 15px; transition: all 0.3s ease;">
-                                    <i class="fas fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #8a5bff;"></i>
-                                </div>
-                                <button type="submit" 
-                                        style="background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%); border: none; color: white; padding: 12px; border-radius: 8px; width: 100%; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(138, 91, 255, 0.2);">
-                                    <i class="fas fa-paper-plane"></i>
-                                    <span>Send Message</span>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <style>
-                @keyframes slideIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                    }
-                    to {
-                        opacity: 1;
-                    }
-                }
-                
-                /* Hover effects */
-                input:focus, button:hover {
-                    transform: translateY(-1px);
-                    box-shadow: 0 6px 20px rgba(138, 91, 255, 0.3) !important;
-                }
-                
-                button:active {
-                    transform: translateY(1px);
-                }
-                
-                /* Custom scrollbar */
-                #messagesContainer::-webkit-scrollbar {
-                    width: 6px;
-                }
-                
-                #messagesContainer::-webkit-scrollbar-track {
-                    background: #2d2640;
-                }
-                
-                #messagesContainer::-webkit-scrollbar-thumb {
-                    background: #8a5bff;
-                    border-radius: 3px;
-                }
-                </style>
-                
-
-                    <div class="d-flex flex-wrap justify-content-center gap-4">
-                        <span style="background: rgba(255, 255, 255, 0.05); 
-                            color: #ffffff; 
-                            padding: 12px 25px; 
-                            border-radius: 20px; 
-                            transition: all 0.3s ease;
-                            border: 1px solid rgba(255, 255, 255, 0.1);
-                            backdrop-filter: blur(5px);">
-                            <i class="bi bi-lightning-charge-fill me-2" style="color: #B983FF;"></i>
-                            Instant Analysis
-                        </span>
-                        <span style="background: rgba(255, 255, 255, 0.05); 
-                            color: #ffffff; 
-                            padding: 12px 25px; 
-                            border-radius: 20px; 
-                            transition: all 0.3s ease;
-                            border: 1px solid rgba(255, 255, 255, 0.1);
-                            backdrop-filter: blur(5px);">
-                            <i class="bi bi-chat-text-fill me-2" style="color: #B983FF;"></i>
-                            Smart Responses
-                        </span>
-                        <span style="background: rgba(255, 255, 255, 0.05); 
-                            color: #ffffff; 
-                            padding: 12px 25px; 
-                            border-radius: 20px; 
-                            transition: all 0.3s ease;
-                            border: 1px solid rgba(255, 255, 255, 0.1);
-                            backdrop-filter: blur(5px);">
-                            <i class="bi bi-shield-check me-2" style="color: #B983FF;"></i>
-                            Secure Upload
-                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="feature-section">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
@@ -562,8 +482,7 @@
             
             <!-- Footer Bottom -->
             <div class="text-center pt-4 mt-2">
-                <p class="mb-0 text-muted">&copy; 2024 EduEase. All rights reserved.</p>
-                <p class="small text-muted mt-2">Empowering Education Through Technology</p>
+                <p class="mb-0 text-white">&copy; 2025 EduEase. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -712,6 +631,133 @@
     </style>
 </div>
 
+    <style>
+        .chat-interface-container {
+            transition: all 0.3s ease;
+        }
+        .upload-section {
+            background-color: #231f33;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
 
+        .file-upload-container {
+            background-color: #2d2640;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px dashed #4a4159;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
 
+        .file-upload-container:hover {
+            border-color: #8a5bff;
+            background-color: rgba(45, 38, 64, 0.8);
+            transform: translateY(-5px);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #8a5bff;
+            margin-bottom: 1rem;
+        }
+
+        .upload-text {
+            color: #e0d9ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .file-input {
+            background-color: #2d2640;
+            border: 1px solid #4a4159;
+            color: #e0d9ff;
+            border-radius: 8px;
+            padding: 10px;
+            padding-left: 35px;
+            width: 100%;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .file-input:hover {
+            border-color: #8a5bff;
+        }
+
+        .file-input:focus {
+            border-color: #8a5bff;
+            box-shadow: 0 0 0 0.25rem rgba(138, 91, 255, 0.25);
+            outline: none;
+        }
+
+        .upload-button {
+            background: linear-gradient(135deg, #8a5bff 0%, #6c3bef 100%);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .upload-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(138, 91, 255, 0.3);
+        }
+
+        .pdf-preview {
+            transition: all 0.3s ease;
+        }
+
+        .upload-container:hover .pdf-preview {
+            transform: rotate(0deg) translateY(-10px);
+        }
+
+        .message {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #messagesContainer::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #messagesContainer::-webkit-scrollbar-track {
+            background: #2d2640;
+            border-radius: 3px;
+        }
+
+        #messagesContainer::-webkit-scrollbar-thumb {
+            background: #8a5bff;
+            border-radius: 3px;
+        }
+
+        .form-control:focus {
+            background-color: #2d2640;
+            border-color: #8a5bff;
+            box-shadow: 0 0 0 0.25rem rgba(138, 91, 255, 0.25);
+            color: #e0d9ff;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(138, 91, 255, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .upload-container:hover {
+            border-color: #8a5bff;
+        }
+    </style>
+</div>
 
